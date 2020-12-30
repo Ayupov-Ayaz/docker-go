@@ -17,7 +17,7 @@ ENV GO111MODULE=on
 WORKDIR /app
 # copy ssl certificates
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
-# copy out user
+# copy user
 COPY --from=builder /etc/passwd /etc/passwd
 COPY --from=builder /app/my-app .
 USER tommy
